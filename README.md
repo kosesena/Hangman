@@ -1,2 +1,2 @@
 # Hangman
-Adam asmaca oyunu 
+ 
