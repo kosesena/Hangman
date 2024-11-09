@@ -10,7 +10,7 @@ namespace AdamAsmaca
     {
         static void Main()
         {
-            // Definig the word list
+            // Defining the word list
             // Kelime listesini tanımlıyoruz
             string[] wordList = { "sena", "adam", "asmaca", "ödevi", "yazilim" };
             Random random = new Random();
