@@ -10,13 +10,20 @@ namespace AdamAsmaca
     {
         static void Main()
         {
+            // Definig the word list
+            // Kelime listesini tanımlıyoruz
             string[] wordList = { "sena", "adam", "asmaca", "ödevi", "yazilim" };
             Random random = new Random();
+            
+            // Selecting a random word
+            // Rastgele bir kelime seçiyoruz
             string chosenWord = wordList[random.Next(wordList.Length)];
 
-            char[] guessedWord = new string('_', chosenWord.Length).ToCharArray();
-            List<char> guessedLetters = new List<char>();
-            int attemptsLeft = 6;
+            // Variables to store the guessed word and letters
+            // Tahmin edilen kelimeyi ve harfleri saklamak için gerekli değişkenler
+            char[] guessedWord = new string('_', chosenWord.Length).ToCharArray(); // Başlangıçta tüm karakterler'_'olarak ayarlanır / Initially setting all characters to '_'
+            List<char> guessedLetters = new List<char>(); // Tahmin edilen harflerin listesi / List of guessed letters
+            int attemptsLeft = 6; //Kalan tahmin hakkı / Remainig guess attempts
             bool wordGuessed = false;
 
             Console.WriteLine("Adam Asmaca Oyununa Hoş Geldiniz!");
