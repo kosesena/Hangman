@@ -1,7 +1,7 @@
 # Hangman
 ## **AdamAsmaca (Hangman) Oyunu**
 
-### Türkçe
+### TR
 
 Bu proje, konsol tabanlı bir AdamAsmaca oyunudur. Oyuncu, verilen bir kelimenin harflerini doğru tahmin etmeye çalışır. Yanlış tahminlerde tahmin hakları azalır, ve tüm haklar bitmeden doğru tahmin edilirse oyuncu kazanır.
 
@@ -18,7 +18,7 @@ Bu proje, konsol tabanlı bir AdamAsmaca oyunudur. Oyuncu, verilen bir kelimenin
 	2.	Main metodunu çalıştırarak oyunu başlatın.
 	3.	Konsolda tahmin etmek istediğiniz harfi girin ve verilen ipuçlarını takip ederek kelimeyi doğru tahmin etmeye çalışın.
 
-## English
+## EN
 
 This project is a console-based Hangman game. The player tries to guess the letters of a given word correctly. With each incorrect guess, the remaining attempts decrease, and if the player guesses the word correctly before running out of attempts, they win.
 
