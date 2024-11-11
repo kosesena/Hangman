@@ -33,6 +33,9 @@ namespace AdamAsmaca
                 Console.WriteLine("\nKelime: " + new string(guessedWord));// English: Displays the current state of the word.
                 Console.WriteLine($"Kalan tahmin hakkı: {attemptsLeft}");// English: Shows remaining attempts.
                 Console.Write("Bir harf tahmin edin: "); // English: Prompt to guess a letter.
+
+                //Takes a letter from the user and converts it to lowercase.
+                //Kullanıcıdan bir harf alıp küçük harfe çevirir.
                 char guessedChar = char.ToLower(Console.ReadLine()[0]);
 
                 if (guessedLetters.Contains(guessedChar))
