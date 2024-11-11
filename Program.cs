@@ -26,13 +26,13 @@ namespace AdamAsmaca
             int attemptsLeft = 6; //Kalan tahmin hakkı / Remainig guess attempts
             bool wordGuessed = false;
 
-            Console.WriteLine("Adam Asmaca Oyununa Hoş Geldiniz!");
+            Console.WriteLine("Adam Asmaca Oyununa Hoş Geldiniz!"); // English: Welcome to the Hangman Game!
 
-            while (attemptsLeft > 0 && !wordGuessed)
+            while (attemptsLeft > 0 && !wordGuessed)//Tahmin hakları bitmediği ve kelime bilinmediği sürece devam eder.
             {
-                Console.WriteLine("\nKelime: " + new string(guessedWord));
-                Console.WriteLine($"Kalan tahmin hakkı: {attemptsLeft}");
-                Console.Write("Bir harf tahmin edin: ");
+                Console.WriteLine("\nKelime: " + new string(guessedWord));// English: Displays the current state of the word.
+                Console.WriteLine($"Kalan tahmin hakkı: {attemptsLeft}");// English: Shows remaining attempts.
+                Console.Write("Bir harf tahmin edin: "); // English: Prompt to guess a letter.
                 char guessedChar = char.ToLower(Console.ReadLine()[0]);
 
                 if (guessedLetters.Contains(guessedChar))
