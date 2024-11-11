@@ -23,7 +23,7 @@ namespace AdamAsmaca
             // Tahmin edilen kelimeyi ve harfleri saklamak için gerekli değişkenler
             char[] guessedWord = new string('_', chosenWord.Length).ToCharArray(); // Başlangıçta tüm karakterler'_'olarak ayarlanır / Initially setting all characters to '_'
             List<char> guessedLetters = new List<char>(); // Tahmin edilen harflerin listesi / List of guessed letters
-            int attemptsLeft = 6; //Kalan tahmin hakkı / Remainig guess attempts
+            int attemptsLeft = 6; // Kalan tahmin hakkı / Remainig guess attempts
             bool wordGuessed = false;
 
             Console.WriteLine("Adam Asmaca Oyununa Hoş Geldiniz!"); // English: Welcome to the Hangman Game!
@@ -38,29 +38,29 @@ namespace AdamAsmaca
                 //Kullanıcıdan bir harf alıp küçük harfe çevirir.
                 char guessedChar = char.ToLower(Console.ReadLine()[0]);
 
-                if (guessedLetters.Contains(guessedChar))
+                if (guessedLetters.Contains(guessedChar)) // Harfin zaten tahmin edilip edilmediğini kontrol eder.
                 {
-                    Console.WriteLine("Bu harfi zaten tahmin ettiniz, başka bir harf deneyin.");
+                    Console.WriteLine("Bu harfi zaten tahmin ettiniz, başka bir harf deneyin."); // Inform the user if they already guessed the letter.
                     continue;
                 }
-                guessedLetters.Add(guessedChar);
+                guessedLetters.Add(guessedChar); // Tahmin edilen harfi listeye ekler / Adds the guessed letter to the list.
 
-                if (chosenWord.Contains(guessedChar))
+                if (chosenWord.Contains(guessedChar)) // Tahmin edilen harfin kelimede olup olmadığını kontrol eder
                 {
-                    Console.WriteLine($"Doğru tahmin! '{guessedChar}' harfi kelimenin içinde var.");
-                    for (int i = 0; i < chosenWord.Length; i++)
+                    Console.WriteLine($"Doğru tahmin! '{guessedChar}' harfi kelimenin içinde var."); // Correct guess message.
+                    for (int i = 0; i < chosenWord.Length; i++) // Kelimedeki tüm harfleri kontrol eder. / Checks each character in the word.
                     {
-                        if (chosenWord[i] == guessedChar)
+                        if (chosenWord[i] == guessedChar) // Tahmin edilen harf doğruysa, guessedWord dizisine eklenir.
                         {
-                            guessedWord[i] = guessedChar;
+                            guessedWord[i] = guessedChar; // Adds correct guessed letter to guessedWord array.
                         }
 
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"Yanlış tahmin! '{guessedChar}' harfi kelimenin içinde yok.");
-                    attemptsLeft--;
+                    Console.WriteLine($"Yanlış tahmin! '{guessedChar}' harfi kelimenin içinde yok."); // Incorrect guess message.
+                    attemptsLeft--; // Yanlış tahminde bulunulursa tahmin hakları azaltılır. / Decreases attempts left on incorrect guess.
                 }
 
                 //Eğer kelimenin tamamı tahmin edildiyse oyun biter
@@ -68,13 +68,13 @@ namespace AdamAsmaca
 
             }
 
-            if (wordGuessed)
+            if (wordGuessed) // Oyuncu kelimeyi bilirse kazandığını belirtir.
             {
                 Console.WriteLine($"\nTebrikler! Kelimeyi doğru tahmin ettiniz: {chosenWord}");
             }
-            else
+            else // Oyuncu tahmin hakkını doldurduysa kaybettiğini belirtir.
             {
-                Console.WriteLine($"\nMaalesef, tahmin hakkınız bitti. Kelime:{chosenWord}");
+                Console.WriteLine($"\nMaalesef, tahmin hakkınız bitti. Kelime:{chosenWord}"); // Informs the player of the correct word after they run out of attempts.
 
             }
 
